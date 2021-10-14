@@ -48,7 +48,7 @@ end
 
 Then /I should see all (\d+) movies/ do |number|
   # Make sure that all the movies in the app are visible in the table
-  expect(number).to eq Movie.count
+  expect(number).to eq "#{Movie.count}"
   Movie.all.each do |movie|
     step "I should see \"#{movie["title"]}\""
   end
