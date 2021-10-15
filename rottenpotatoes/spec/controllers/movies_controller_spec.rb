@@ -1,7 +1,5 @@
 require "rails_helper"
+require "movies_controller"
 
 describe MoviesController do
-    it "receives a click to find same directors" do
-        expect("0").to eq "1"
-    end
 end
