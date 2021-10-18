@@ -1,0 +1,51 @@
+FFFF
+
+Failures:
+
+  1) MoviesController#movies_with_same_director given that a movie has a director returns each and every movie with the same director
+     Failure/Error: expect(Movie.find_by_title("Star Wars").movies_with_same_director.all.count).to eq 2
+
+       expected: 2
+            got: 20
+
+       (compared using ==)
+     # ./spec/controllers/movies_controller_spec.rb:12:in `block (4 levels) in <top (required)>'
+
+  2) MoviesController#movies_with_same_director given that a movie does not have a director does not return any movies
+     Failure/Error: expect(Movie.find_by_title("Alien").movies_with_same_director.all.count).to eq 0
+
+       expected: 0
+            got: 10
+
+       (compared using ==)
+     # ./spec/controllers/movies_controller_spec.rb:21:in `block (4 levels) in <top (required)>'
+
+  3) Movie#movies_with_same_director given that a movie has a director returns each and every movie with the same director
+     Failure/Error: expect(Movie.find_by_title("Star Wars").movies_with_same_director.all.count).to eq 2
+
+       expected: 2
+            got: 22
+
+       (compared using ==)
+     # ./spec/models/movie_spec.rb:12:in `block (4 levels) in <top (required)>'
+
+  4) Movie#movies_with_same_director given that a movie does not have a director does not return any movies
+     Failure/Error: expect(Movie.find_by_title("Alien").movies_with_same_director.all.count).to eq 0
+
+       expected: 0
+            got: 11
+
+       (compared using ==)
+     # ./spec/models/movie_spec.rb:21:in `block (4 levels) in <top (required)>'
+
+Finished in 0.17877 seconds (files took 1.86 seconds to load)
+4 examples, 4 failures
+
+Failed examples:
+
+rspec ./spec/controllers/movies_controller_spec.rb:11 # MoviesController#movies_with_same_director given that a movie has a director returns each and every movie with the same director
+rspec ./spec/controllers/movies_controller_spec.rb:20 # MoviesController#movies_with_same_director given that a movie does not have a director does not return any movies
+rspec ./spec/models/movie_spec.rb:11 # Movie#movies_with_same_director given that a movie has a director returns each and every movie with the same director
+rspec ./spec/models/movie_spec.rb:20 # Movie#movies_with_same_director given that a movie does not have a director does not return any movies
+
+Coverage report generated for Cucumber Features, RSpec to /home/ec2-user/environment/terrific-unit-testing/rottenpotatoes/coverage. 37 / 50 LOC (74.0%) covered.
